@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  pgadmin:
+    image: fenglc/pgadmin4
+    container_name: pgadmin
+    restart: always
+    ports:
+      - 5050:5050
+    environment: 
+      - DEFAULT_USER=user
+      - DEFAULT_PASSWORD=user
+
+  postgres:
+    container_name: postgres
+    build: .
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=sudria
+      - POSTGRES_PASSWORD=esme
+      - POSTGRES_MULTIPLE_DATABASES=bio_icare_drone,pizza_shop,sportsdb
+
