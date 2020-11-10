@@ -39,7 +39,7 @@ Install process are in the upper link :)
 git clone https://github.com/luxcharmant/lab-postgresql-dockerize.git
 ```
 
-To create the containers, use the command
+To create the containers, build if necessary, use the command
 
     make postgres-up
 
@@ -81,3 +81,22 @@ That's normal if the picture is not up-to-date..
 the Host Name is resolved through [user-defined-network on docker](https://docs.docker.com/v17.09/engine/userguide/networking/configure-dns/).
 
 Step 3: use the database that match our practical work
+
+
+## Useful commands
+
+To down the containers, use the command
+
+    make postgres-down
+
+To force down the containers if pgadmin doesn't want to exit, use the command
+
+    make postgres-down-force
+
+To create the containers in background, build if necessary, use the command
+
+    make postgres-up-bg
+
+To logs postgres container, specially useful when starting postgres in background, use the command
+
+    make postgres-logs
